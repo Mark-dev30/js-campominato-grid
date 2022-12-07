@@ -8,6 +8,7 @@ un messaggio in console con il numero della cella cliccata. */
 
 function createElement (number)
 {
+    
     const divElement = document.createElement('div');
 
     divElement.classList.add("square");
@@ -22,23 +23,17 @@ const btn = document.getElementById("btn-play");
  btn.addEventListener('click', function(){
 
     let grid = document.getElementById("grid");
-
+    document.getElementById('grid').innerHTML = '';
     for (let i = 0; i<100; i++){
         const currentSquare = createElement (i+1);
 
         currentSquare.addEventListener('click', function(){
             this.classList.add("click") 
-            console.log(i+1)
+            console.log(this.innerText);
             
 
         })
-
         grid.appendChild(currentSquare);
-
     }
-    
-
-
-
 
  })
